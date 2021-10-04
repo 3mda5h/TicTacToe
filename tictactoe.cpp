@@ -22,10 +22,12 @@ int main()
 	  if((coords[0] == 'a'||coords[0] == 'b' || coords[0] == 'c') && (coords[1] == '1' ||
 								    coords[1] == '2' || coords[1] == '3'))
 	    {
+	      //if the coords are empty
 	      if(grid[int(coords[0]) - 97][(int)coords[1] - 49] == 0)
 		{
 		  if(turn == 'X')
 		    { 
+		      cout << "called" << endl;
 		      grid[int(coords[0]) - 97][(int)coords[1] - 49] = 1;
 		      turn = 'O';
 		      validcoords = true;
@@ -36,7 +38,8 @@ int main()
 		      turn = 'X';
 		      validcoords = true;
 		    }
-		}
+		} 
+	      //if coords have been played
 	      else
 		{
 		  cout << "These coords have already been played. Try again:" << endl;
@@ -51,20 +54,16 @@ int main()
 	      cin.get();
 	    }
 	}
-      //cout << grid[1][0] << endl;   
+      cout << "Value at a1: " << grid[0][0] << endl;   
   printgrid(grid);
   //check for win
   //running = false;
     }
-      
-  //grid[2][1] = 2;
-  //cout << grid[3][1] << endl;
-  //printgrid(grid);
 }
 
 void printgrid(int grid[3][3])
 {
-  cout << grid[1][0] << endl;
+  //cout << grid[1][0] << endl;
   cout << "    1   2   3" << endl;
   cout << endl;
   int letter = 97;
